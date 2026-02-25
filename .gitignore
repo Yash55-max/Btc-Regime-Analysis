@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+build/
+dist/
+*.egg-info/
+.vscode/
+*.npy
+*.csv
+# Keep images? User might want to show results.
+# btc_15m_data_2018_to_2025.csv is specifically 43MB.
+# If I'm unsure, I'll ask, but typically raw data isn't pushed.
+# However, the user said "push the files in @[btc_regime_analysis]".
+# I'll include the script files and the README.
+# I will exclude the huge CSV and binary data for now as a best practice, but maybe I should keep the images.
