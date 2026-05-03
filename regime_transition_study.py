@@ -40,7 +40,7 @@ MIN_REGIME_BARS = 10 * 96
 
 def get_regime_labels(prices):
     N = len(prices)
-    # 1. SMA Computation
+    # 1. SMA Compute
     sma = np.full(N, np.nan)
     win_sum = 0.0
     for i in range(N):
@@ -87,7 +87,7 @@ def get_regime_labels(prices):
                 else: label = "UP"
             else: exit_cnt = 0; label = "UP"
             
-        else: # DOWN
+        else: 
             if sig > -EXIT_PCT:
                 exit_cnt += 1
                 if exit_cnt >= DRIFT_CONFIRM:
@@ -97,7 +97,7 @@ def get_regime_labels(prices):
         
         labels.append(label)
 
-    # 3. Structural Cleanup (Segments)
+    # 3. Structural Cleanup
     segments = []
     if not labels: return [], []
     start_i = 0
@@ -108,7 +108,7 @@ def get_regime_labels(prices):
             start_i, curr = i, labels[i]
     segments.append([start_i, N-1, curr])
 
-    # Merge small segments
+    
     changed = True
     while changed:
         changed = False
