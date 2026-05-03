@@ -1,7 +1,6 @@
 """
 btc_adaptive_exposure.py
 ========================
-Upgrades the Sentinel regime strategy from binary allocation to adaptive exposure.
 
 Exposure Logic (Adaptive Sentinel):
 • DRIFT_UP: Scale based on strength -> min(1.0, signal / (ENTER_PCT * 1.5))
@@ -136,7 +135,7 @@ def simulate_adaptive(p_subset, l_subset, s_subset):
         elif lbl == "DOWN":
             exposure = 0.0
             last_major = "DOWN"
-        else: # NORMAL
+        else: 
             # Memory-based scaling for structural participation
             exposure = 0.6 if last_major == "UP" else 0.2
             
